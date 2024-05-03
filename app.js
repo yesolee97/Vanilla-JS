@@ -1,3 +1,18 @@
+
+// << 230828 커밋 깃 코드 =======
+const amIFat = true;
+console.log(amIFat);
+
+const days0fweek=["mon", "tue", "wed", "thu", "fri", "sat"];
+
+//get Item form array
+console.log(days0fweek);
+
+// Add one more day to the array
+days0fweek.push("sun");
+console.log(days0fweek);
+//  230828 커밋 깃 코드- cab1772addab836ffeab5393abfb5c1987117407 >>
+
 const title = document.querySelector(".hello h1");
 
 console.dir(title);
