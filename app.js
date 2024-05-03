@@ -28,4 +28,20 @@ function heandleWindowResize(){
 	document.body.style.backgroundColor = "tomato";
 }
 
+function handleWindowCopy(){
+	alert("copier!");
+}
+
+function handleWindowOffLine(){
+	alert("WiFI Off!!");
+}
+function handleWindowOnLine(){
+	alert("WiFI OnLine!");
+}
+
 window.addEventListener("resize", heandleWindowResize);
+//window.addEventListener("copy", handleWindowCopy); = title.oncopy = handleWindowCopy; // 둘이 같음
+title.oncopy = handleWindowCopy;
+
+window.addEventListener("offline", handleWindowOffLine);
+window.addEventListener("online", handleWindowOnLine);
