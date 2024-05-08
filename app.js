@@ -58,6 +58,7 @@ window.addEventListener("offline", handleWindowOffLine); //와이파이(인터�
 window.addEventListener("online", handleWindowOnLine); //와이파이(인터넷) 켜짐 감지
 */
 
+/* 240505 학습내용
 const title = document.querySelector(".hello h1");
 function handleToggleClick(){
 	const TitltColor = title.style.color;
@@ -70,6 +71,7 @@ function handleToggleClick(){
 	title.style.color = NewColor;
 }
 title.addEventListener("click", handleToggleClick);
+*/
 
 /*
 newColor를 let이라는 변수로 선언해준 이유 - 계속 변화되기 때문
@@ -83,3 +85,16 @@ false일 경우엔 newColor에 "blue"라고 데이터를 넣어줌.
 - if문(조건문) NewColor에 값은 받아져 있지만, 그게 title.style.color에 값을 넣으라는 코드는 없음,
 그래서 마지막줄에 title.style.color에 NewColor 값을 넣어주라는 코드 넣어줌
 */
+
+// 240508 학습
+const title = document.querySelector(".hello h1");
+const clickedClass = "active"; // css에서 클래스가 변경 될때 if, else에다 2번 넣어줄 필요 없이 여기에다가 한번만 넣어주면 되기 때문에 변수로 만들어줌
+
+function handleToggleClick(){
+	if(title.classList.contains(clickedClass)){
+		title.classList.remove(clickedClass);
+	}else{
+		title.classList.add(clickedClass);
+	}
+}
+title.addEventListener("click", handleToggleClick);
