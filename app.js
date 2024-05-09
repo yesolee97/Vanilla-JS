@@ -101,17 +101,22 @@ function handleToggleClick(){
 title.addEventListener("click", handleToggleClick);*/
 
 
+const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
+//const loginButton = document.querySelector("#login-form button");
 
-function clickHandle(){
+/*ifunction clickHandle(){
 	const username = loginInput.value;
-	/*if(username === ""){
+	f(username === ""){
 		alert("Plase write your name");
 	} else if(username.length > 15) {
 		alert("your name is too rong");
-	}*/
+	}
+}*/
+function onLoginSubmit(e){
+	e.preventDefault();
+	const username = loginInput.value;
 	console.log(username);
 }
-
-loginButton.addEventListener("click", clickHandle);
+loginForm.addEventListener("submit", onLoginSubmit);
+//loginButton.addEventListener("click", clickHandle);
