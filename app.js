@@ -86,16 +86,32 @@ false일 경우엔 newColor에 "blue"라고 데이터를 넣어줌.
 그래서 마지막줄에 title.style.color에 NewColor 값을 넣어주라는 코드 넣어줌
 */
 
-// 240508 학습
+/* 240508 ~ 09 학습
 const title = document.querySelector(".hello h1");
 const clickedClass = "active"; // css에서 클래스가 변경 될때 if, else에다 2번 넣어줄 필요 없이 여기에다가 한번만 넣어주면 되기 때문에 변수로 만들어줌
 
 function handleToggleClick(){
-	/* if(title.classList.contains(clickedClass)){
+	if(title.classList.contains(clickedClass)){
 		title.classList.remove(clickedClass);
 	}else{
 		title.classList.add(clickedClass);
-	}*/
+	}
 	title.classList.toggle(clickedClass); // 위에 if문이랑 동일한 기능 수행
 }
-title.addEventListener("click", handleToggleClick);
+title.addEventListener("click", handleToggleClick);*/
+
+
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
+
+function clickHandle(){
+	const username = loginInput.value;
+	/*if(username === ""){
+		alert("Plase write your name");
+	} else if(username.length > 15) {
+		alert("your name is too rong");
+	}*/
+	console.log(username);
+}
+
+loginButton.addEventListener("click", clickHandle);
