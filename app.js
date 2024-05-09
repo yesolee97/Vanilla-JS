@@ -91,10 +91,11 @@ const title = document.querySelector(".hello h1");
 const clickedClass = "active"; // css에서 클래스가 변경 될때 if, else에다 2번 넣어줄 필요 없이 여기에다가 한번만 넣어주면 되기 때문에 변수로 만들어줌
 
 function handleToggleClick(){
-	if(title.classList.contains(clickedClass)){
+	/* if(title.classList.contains(clickedClass)){
 		title.classList.remove(clickedClass);
 	}else{
 		title.classList.add(clickedClass);
-	}
+	}*/
+	title.classList.toggle(clickedClass); // 위에 if문이랑 동일한 기능 수행
 }
 title.addEventListener("click", handleToggleClick);
