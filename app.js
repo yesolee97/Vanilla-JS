@@ -129,11 +129,10 @@ function onLoginSubmit(e){
 loginForm.addEventListener("submit", onLoginSubmit);
 //loginButton.addEventListener("click", clickHandle);
 
-
-const link = document.querySelector("a");
-
 /* 
 // (e)이해할 수 있게 실습한 코드, 
+const link = document.querySelector("a");
+
 addEventListener를 통해 일어난 event를 handle function의 ()안에 담으면(ex, (e)) 이벤트를 실행하면서 발생한 정보들을 (e)를 통해 컨트롤 하거나 (e)에 담긴 정보들로 여러 작업을 진행할 수 있음. (preventDefault(), screenX/Y(마우스의 현재 가로/세로위치) 등 )
 function linkStop(e){
 	e.preventDefault();
