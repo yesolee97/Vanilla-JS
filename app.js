@@ -101,22 +101,59 @@ function handleToggleClick(){
 title.addEventListener("click", handleToggleClick);*/
 
 
-const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-form input");
 //const loginButton = document.querySelector("#login-form button");
 
-/*ifunction clickHandle(){
+/* function clickHandle(){
 	const username = loginInput.value;
-	f(username === ""){
+	if(username === ""){
 		alert("Plase write your name");
 	} else if(username.length > 15) {
 		alert("your name is too rong");
 	}
 }*/
+
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+const HIDDEN_CLASS = "dp_n"
+
 function onLoginSubmit(e){
-	e.preventDefault();
+	e.preventDefault(); // 브라우저가 기본 동작을 실행하지 못하게 막기
 	const username = loginInput.value;
+	loginForm.classList.add(HIDDEN_CLASS);
+	//greeting.innerText = "Hello " + username;
+	greeting.innerText = `Hello ${username}`; //위 코드랑 동일함 백틱 사용해서 작업할 수 있음 이게 좀 더 새로운 방법임 규칙1, 변수명 ${} 안에 써주기 규칙2 ``로 감싸주기
+	greeting.classList.remove(HIDDEN_CLASS);
 	console.log(username);
 }
 loginForm.addEventListener("submit", onLoginSubmit);
 //loginButton.addEventListener("click", clickHandle);
+
+
+const link = document.querySelector("a");
+
+/* 
+// (e)이해할 수 있게 실습한 코드, 
+addEventListener를 통해 일어난 event를 handle function의 ()안에 담으면(ex, (e)) 이벤트를 실행하면서 발생한 정보들을 (e)를 통해 컨트롤 하거나 (e)에 담긴 정보들로 여러 작업을 진행할 수 있음. (preventDefault(), screenX/Y(마우스의 현재 가로/세로위치) 등 )
+function linkStop(e){
+	e.preventDefault();
+	console.dir(link);
+}
+
+link.addEventListener("click", linkStop);
+*/
+
+
+//240510 - 자발적 코드 작성 (유저가 내용 입력했을경우 form 사라지게)
+/*const formbtn = document.querySelector("#login-form button");
+const loginSubMit = document.querySelector("#login-form input[type='submit']");
+
+function formOkHandle(){
+	if(loginInput === ""){
+		alert("plase too white user name");
+	} else {
+		loginForm.classList.add("dp_n");
+	}
+}
+
+loginSubMit.addEventListener("click", formOkHandle);*/
