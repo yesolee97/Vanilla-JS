@@ -167,17 +167,21 @@ function onLoginSubmit(e){
 	const username = loginInput.value;
 	localStorage.setItem(USERNAME_KEY, username);
 	loginForm.classList.add(HIDDEN_CLASS);
+	paintGreetings(suername);
 }
 loginForm.addEventListener("submit", onLoginSubmit);
 // 로그인 버튼 클릭 시 실행 end
+
+// 사용자 명 받아서 h1태그에 넣어주는 기능만 따로 funtion에 담아둠 아래에서 쓰임
 function paintGreetings(abc){
 	//greeting.innerText = "Hello " + username;
 	greeting.innerText = `Hello ${abc}`; //위 코드랑 동일함 백틱 사용해서 작업할 수 있음 이게 좀 더 새로운 방법임 규칙1, 변수명 ${} 안에 써주기 규칙2 ``로 감싸주기
 	greeting.classList.remove(HIDDEN_CLASS);
 }
+
+//
 const USERNAME_KEY = "username";
 const savedUsername = localStorage.getItem(USERNAME_KEY);
-console.log(savedUsername);
 
 if (savedUsername === null){
 	loginForm.classList.remove(HIDDEN_CLASS);
