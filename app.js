@@ -112,21 +112,6 @@ title.addEventListener("click", handleToggleClick);*/
 	}
 }*/
 
-const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-form input");
-const greeting = document.querySelector("#greeting");
-const HIDDEN_CLASS = "dp_n"
-
-function onLoginSubmit(e){
-	e.preventDefault(); // 브라우저가 기본 동작을 실행하지 못하게 막기
-	const username = loginInput.value;
-	loginForm.classList.add(HIDDEN_CLASS);
-	//greeting.innerText = "Hello " + username;
-	greeting.innerText = `Hello ${username}`; //위 코드랑 동일함 백틱 사용해서 작업할 수 있음 이게 좀 더 새로운 방법임 규칙1, 변수명 ${} 안에 써주기 규칙2 ``로 감싸주기
-	greeting.classList.remove(HIDDEN_CLASS);
-	console.log(username);
-}
-loginForm.addEventListener("submit", onLoginSubmit);
 //loginButton.addEventListener("click", clickHandle);
 
 /* 
@@ -156,3 +141,50 @@ function formOkHandle(){
 }
 
 loginSubMit.addEventListener("click", formOkHandle);*/
+
+
+
+/* 240511 - localStarage 학습
+: 브라우저에 무언가를 저장한 후 나중에 가져 올 수 있음. (새로고침해도 값 남음)
+localStorage.setItem("username", 예솔); > "username": key / "예솔" value
+
+- 로컬 저장소에 해당 키와 값을 저장함.
+localStorage.setItem("username", "예솔");
+- 로컬 저장소에 해당 키에 해당되는 값을 불러옴.
+localStorage.getItem("username");
+- 로컬 저장소에 해당 키에 해당되는 키, 값을 삭제함.
+localStorage.removeItem("username");
+*/
+
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+const HIDDEN_CLASS = "dp_n"
+
+// 로그인 버튼 클릭 시 실행 start
+function onLoginSubmit(e){
+	e.preventDefault(); // 브라우저가 기본 동작을 실행하지 못하게 막기
+	const username = loginInput.value;
+	localStorage.setItem(USERNAME_KEY, username);
+	loginForm.classList.add(HIDDEN_CLASS);
+}
+loginForm.addEventListener("submit", onLoginSubmit);
+// 로그인 버튼 클릭 시 실행 end
+function paintGreetings(abc){
+	//greeting.innerText = "Hello " + username;
+	greeting.innerText = `Hello ${abc}`; //위 코드랑 동일함 백틱 사용해서 작업할 수 있음 이게 좀 더 새로운 방법임 규칙1, 변수명 ${} 안에 써주기 규칙2 ``로 감싸주기
+	greeting.classList.remove(HIDDEN_CLASS);
+}
+const USERNAME_KEY = "username";
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+console.log(savedUsername);
+
+if (savedUsername === null){
+	loginForm.classList.remove(HIDDEN_CLASS);
+	loginForm.addEventListener("submit", onLoginSubmit);
+	//greeting.classList.add(HIDDEN_CLASS);
+} else {
+	paintGreetings(savedUsername);
+	// loginForm.classList.add(HIDDEN_CLASS);
+	// console.log(greeting);
+}
