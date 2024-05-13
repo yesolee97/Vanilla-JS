@@ -1,0 +1,57 @@
+const title = document.querySelector("#hello h1");
+const title = document.getElementByIdl("hello");
+
+- 위 둘은 같은 id를 가르킴,
+- querySelector는 css 선택자를 따름(:first-child 사용가능), 따라서 id class 모두 부를 수 있고, id/class 하위 요소들까지 선택 가능함.
+- querySelector 사용 시 중복되는 태그 요소가 있을경우 제일 첫번째 요소만 가지고 옴
+
+내장함수
+- innerText: 선택한 요소의 글자를 원하는 내용으로 바꾸는 것
+- querySelector: css 선택자를 기준으로 html 파일 안의 태그를 선택해올 수 있음, 겹치는 선택자가 있을경우 첫번째 태그만 불러옴
+- querySelectorAll: 위와 동일한 내용, 겹치는 선택자가 있을경우 모든 태그 불러옴
+- document.body.style: body, head, title 같이 html 태그에 하나밖에 못쓰는 것들은 document 뒤에 바로 붙여쓸수 있음, 일반 div나 h1 태그들은 document.queryselector 형식으로 가져올 수 있음
+
+
+자바스크립트 기본 사용법
+1. 변수 선언 - 원하는 이벤트 적용시킬 html 코드를 담을 변수 선언하기.
+const title = document.querySelector(".hello h1"); 
+
+2. 원하는 이벤트 효과 작성하기 - 아래 코드는 handleTitleClick라는 핸들러가 실행 됐을 때 콘솔창에 title was click 메세지 띄우라는 뜻.
+function handleTitleClick(){
+	console.log("title was click");	
+}
+
+3. 원하는 이벤트 동작 설정하기 - click, refresh mouseover등등?
+title.addEventListener("click", handleTitleClick);
+: 위 코드에서는 title에 적용된 addEventListener를 통해 click이벤트를 적용함 >클릭 시 2번에서 만들어둔 handleTitleClick 이벤트가 활성화 되도록 설정했음
+
+
+이벤트 리스닝 검색하는 법
+: 태그 + mdn 으로 검색하기 > Web APls HeadingElement페이지 찾아서 들어가기
+or
+console.dir("h1") > ""안에 태그는 그때마다 변경해서 콘솔창에서 사용할수 있는 property 값들 확인해보기 (onmouse등 on붙은건 빼고 사용함)
+
+사용해본 이벤트 리스닝
+※ addEventListener 대신 아래처럼 동일하게 사용할 수 있음, but 안쓰는이유 = removeEventListener로 이벤트 지울 수 있어서!
+title.addEventListener("click", handleTitleClick); or title.onclick = handleTitleClick;
+title.addEventListener("mouseenter", handlemouseEnter); or title.onmouseenter = handlemouseEnter;
+title.addEventListener("mouseleave", handleMouseLeave); or title.onmouseleave = handleMouseLeave;
+
+개발자 도구에서 와이파이 on/off하는 법
+f12 > Network > 상단 바부분의 No throttling 클릭 후 나오는 셀렉트중 offline 클릭하면 off됌
+
+
+form 안에서 엔터를 누르고 input이 더 존재하지 않을 때 or  form 안에 있는 버튼을 눌렀을 때  > 자동으로 submit 됌,
+> submit 시 홈페이지 새로고침 됌 > 새로고침 없이 user 정보저장하게 스크립트 짜기
+
+
+addEventListener를 사용할때는 이벤트를 바로 실행시키려는 게 아님
+> 핸들러 뒤에 ()붙일 필요 없음 > () 붙이면 화면 뜨자마자 펑션 실행하기 때문에 > 이럴경우 이벤트를 한번만 실행함 (클릭할때마다 실행하고 싶은데 홈페이지 들어오자마자 한번 실행하고 땡임)
+> addEventListener를 통해 일어난 event를 handle function의 ()안에 담으면(ex, (e)) 이벤트를 실행하면서 발생한 정보들을 (e)를 통해 컨트롤 하거나 (e)에 담긴 정보들로 여러 작업을 진행할 수 있음. (preventDefault(), screenX/Y(마우스의 현재 가로/세로위치) 등 )
+
+preventDefault();
+> 이벤트가 가진 기본 Default값을 발생시키지 않게 하는 함수
+
+aleat: 좀 특이해서 경고창이 뜨면 모든 js를 막게 설정되어있음 (그래서 요새 잘 안씀)
+
+★ 스트링만 포함된 변수명은 대문자로 표기함 
