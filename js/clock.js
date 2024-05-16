@@ -1,8 +1,8 @@
 const clock = document.querySelector("#clock");
 
-function sayHello(){
+/*function sayHello(){
     console.log("hello");
-}
+}*/
 
 //setInterval(sayHello, 5000); //5초마다 반복실행, 사이트 접속 5초후 실행
 //setTimeout(sayHello, 5000); // 5초 기다렸다가 한번만 실행, 사이트 접속 5초후 실행
@@ -10,11 +10,11 @@ function sayHello(){
 
 function getclock(){
     const date = new Date();
-    const hours = String(date.getHours()).PadStart(2, "0");
-    const minutes = String(date.getgetMinutesHours()).PadStart(2, "0");
-    const second = String(date.getSeconds()).PadStart(2, "0");
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    const seconds = String(date.getSeconds()).padEnd(3, "무래");
 
-    clock.innerText = `${hours}:${minutes}:${second}`;
+    clock.innerText = `${hours}:${minutes}:${seconds}`;
     date.getSeconds()
 }
 getclock();// 바로 시간 호출하기 위한 함수
