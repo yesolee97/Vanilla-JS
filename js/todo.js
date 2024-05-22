@@ -13,9 +13,11 @@ function saveToDo(){
 }
 
 function deleteToDo(event){
-    console.log("test");
     const li = event.target.parentElement; // 클릭된 이벤트 타겟(버튼) > parentElement 버튼의 부모(li)를 가르킴
     li.remove(); // 가르키고있는 li를 삭제하겠다
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveToDo(); // ★ 삭제한 배열 저장작업 ★
+    console.log(typeof li.id);
 }
 
 function paintToDo(newTodo){
@@ -29,7 +31,7 @@ function paintToDo(newTodo){
     li.appendChild(span); // 만들어둔 li 코드 안에 만들어둔 span 코드 추가
     li.appendChild(button);  // 만들어둔 li 코드 안에 만들어둔 button 코드 추가
     toDoList.appendChild(li);  // 만들어둔 ul 코드 안에 최종 li 코드 추가
-}
+} 
 
 function handleToDoSubmit(e){
     e.preventDefault();
@@ -59,3 +61,5 @@ if(getToDos !== null){
 /* function sayHello(item){
     console.log("this is the turn of", item); //this is the turn of + 배열값 출력
 }*/
+
+ 
