@@ -67,5 +67,41 @@ title();
 
 
 ---
-#2.8 3:30분 보고 따라하기 
+#  2.8 - 한번 더 보기
+펑션의 괄호 안의 매개변수에서 아규먼트를 받아들일 수 있다.
+ex)
+function sayHello(nameOfPerson) {
+console.log(nameOfPerson);
+}
+
+sayHello("nico")
+sayHello("dal")
+sayHello("lynn") // nameOfPerson은 "nico" "dal" "lynn" 을 받았다고 생각하면 됨.
+
+
+아규먼트는 하나만 받을 수 있는게 아니라 여러개를 받을 수 있음.
+ex)
+function sayHello(nameOfPerson , age) {
+console.log(nameOfPerson);
+}
+
+sayHello("nico" , 12);
+sayHello("dal" , 20);
+sayHello("lynn" , 23); // sayHello function의 매개변수 2개는 아래 2개의 argument를 받는 중임.
+
+function의 값은 function 안에서만 존재한다.
+
+오브젝트 안에서 매개변수가 아규먼트를 받는 방식
+ex)
+const player = {
+name : function(Name) {
+console.log("Your Name is " + Name + " 입니다.")
+} ,
+sayHello : function(Age) {
+console.log("Your age is " + Age + " 입니다." )
+}
+}
+
+player.sayHello(14)
+player.name("james")
 ---
