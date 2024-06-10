@@ -1,4 +1,4 @@
-const API_KEY = "285d521ede076023f6ea9c41a22554ff";
+const API_KEY = "11";
 
 function onGeoOk(position){
     // console.log(position); coords 안에 위도/경도 위치정보 확인할 수 있음
