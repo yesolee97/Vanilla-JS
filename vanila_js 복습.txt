@@ -1,0 +1,24 @@
+addeventlistener 
+
+1. document.addeventlistener
+- document.addeventlistener("click", 함수명);
+- 대부분 이렇게 사용: document.addEventListener('DOMContentLoaded', function() {
+	> html보다 스크립트가 먼저 실행되서 이벤트가 안먹는 상황 발생함 > 이럴 때 사용
+	> DOMContentLoaded란? html 먼저 로드 후 스크립트 실행해라, > 모든 이벤트 실행중에 실행이 안되는 경우가 있음 ex) 마우스 올렸을 때 안먹는 거 등등
+}); 
+
+2. window.addeventlistener
+- DOMContentLoaded 신경안쓰고 윈도우에서 바로 짧게 쓰는거?
+
+
+3. 옵션
+- 'beforeunload' : 창을 닫기 전에 쓰임 (ex, 구독하시겠습니까? 안해요 버튼 누르면 정말 안하겠니까)
+- 'unload' : 페이지 껐을 때 (팝업창 꺼버리면 일반페이지에서 실행)
+- 'load' : 페이지가 로딩됐을 때
+- 'keydown' : 엔터 눌렀을 때?
+- 'click', 'mouseover'
+
+4. 제이쿼리랑 섞어서 써도 됌..? 메이비?
+
+classList.add();
+classList.add();
