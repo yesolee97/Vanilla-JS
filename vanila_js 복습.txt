@@ -22,3 +22,37 @@ addeventlistener
 
 classList.add();
 classList.add();
+
+
+----------
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .blue-background { background-color: blue; }
+        .white-background { background-color: white; }
+    </style>
+</head>
+<body class="white-background">
+    <button id="blueButton">파란색으로 변경</button>
+    <button id="whiteButton">원래대로</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+js파일도 분리해서 써라. (내부파일로 작성하지 말고, 외부파일로 js 파일 만들어서 사용하기 버릇들이기)
+ex) main.js는 메인에서만 사용
+
+
+as-is (예전에 사용하던 프로그램?(과거형), 현재상태코드 or ) > 에이전시마다 뜻 다르게 씀
+to-do: 할것들
+to-be: 미래, 뭘 할것이냐
+
+
+- querySelectorAll: 여러가지 선택자 한번에 선택할 수 있음.
+ex) const elements = document.querySelectorAll('.asdf, #aaa, input[type='text']');
+
+
+forEach(): 요소에 접근?
+------------------
