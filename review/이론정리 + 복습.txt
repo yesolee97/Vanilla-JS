@@ -83,7 +83,7 @@ ex)
   sayHello("lynn") 
 
 
-- 인자(argument)는 하나만 받을 수 있는게 아니라 여러개를 받을 수 있음.
+- 인자(argument)는 하나만 받을 수 있는게 아니라 여러개를 받을 수 있음. (인자를 받을 매개변수 공간 만들어야 함)
   ex)
   function sayHello(nameOfPerson , age) {
     console.log(nameOfPerson);
@@ -96,7 +96,7 @@ ex)
 
 - function의 값은 function 안에서만 존재한다. > nameOfPerson , age는 sayHello 함수 안에서만 존재함.
 
-오브젝트 안에서 매개변수가 아규먼트를 받는 방식
+오브젝트 안에서 매개변수가 아규먼트를 받는 방식 > function과 함수명 작성위치가 바뀜 ex) sayHello: function(){} < 이렇게
 ex)
 const player = {
   name : function(Name) {
@@ -110,3 +110,5 @@ const player = {
 player.sayHello(14)
 player.name("james")
 ★---★
+
+#2.9#2.11 Returns 부터 복습하면 됌 
