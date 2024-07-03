@@ -16,7 +16,8 @@ alert : 경고창
 ★ 무조건 정독 : https://velog.io/@untiring_dev/JS-Day45.-Boolean-%ED%83%80%EC%9E%85
 - 참고링크(함수 자료형 변환 표): https://muckycode.blogspot.com/2015/01/javascript-boolean.html
 - 모든 프로그래밍 언어에 존재하는 자료형, 값이 true 또는 false(0), 2개밖에 존재하지 않는 자료형 (= Boolean 자료형)
-★ null이란? - 아무것도 없음. 아무것도 없는 상태로 채워짐 (◆ 자연적으로 발생x, 값이 없다는 것을 확실히 하기 위해 씀 ◆)
+- boolean은 보통 조건문과 같이 쓰임 (true일 경우, false일 경우 펑션 실행. > 이때 조건문 + 비교연산자와 같이 사용되는 경우 多)
+★ null이란? - 아무것도 없음. 아무것도 없는 상태로 채워짐 (▶ 자연적으로 발생x, 값이 없다는 것을 확실히 하기 위해 씀 ◀)
 ★ undefine이란? - 값을 찾을 수 없음 (변수는 선언했는데, 값은 정의되지 않음)
 ★ NaN란? - 숫자가아님 (Not a Number)
 ---
@@ -111,4 +112,4 @@ player.sayHello(14)
 player.name("james")
 ★---★
 
-#2.9#2.11 Returns 부터 복습하면 됌 
+#2.9#2.11 Returns 부터 복습하면 됌 `
