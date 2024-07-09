@@ -69,7 +69,7 @@ title();
 
 
 ★---★
-#  2.8 - https://chatgpt.com/c/892160dd-d0ff-401c-b201-83c097939e82 (함수, 매개변수, 인자 단어 설명)
+#  2.8 ~ 10 - https://chatgpt.com/c/892160dd-d0ff-401c-b201-83c097939e82 (함수, 매개변수, 인자 단어 설명)
 - function의 괄호 안의 매개변수(parameter) = nameOfPerson에서 인자(argument) =  nico, dal, lynn를 받아들일 수 있다.
 ex)
   /* 함수 sayHello 선언 */
@@ -112,4 +112,24 @@ player.sayHello(14)
 player.name("james")
 ★---★
 
-#2.9#2.11 Returns 부터 복습하면 됌 `
+
+★---★
+#  2.11 return
+const age = 96;
+
+/* 함수 calculateKrAge 선언 (바로 실행 x) */
+function calculateKrAge(ageOfForeigner) {
+    return ageOfForeigner + 2;
+}
+
+/* 변수 krAge 선언 = 함수 calculateKrAge 호출 */
+/* 
+  함수 calculateKrAge(age)에서 (age)에 들어가는 인자(argument)값을 calculateKrAge 함수의 매개변수인 (ageOfForeigner)에 넘겨줌. 
+  1. 해당 코드에서 age = 96이라고 선언되었으니 
+  2. calculateKrAge(96)이 되고,
+  3. 이 ()안의 값이 ageOfForeigner으로 넘어가짐.
+*/
+const krAge = calculateKrAge(age);
+/* 변수 krAge의 값 = 96 + 2가 되어 98이 콘솔에 찍힘 */
+console.log(krAge);
+★---★
