@@ -139,4 +139,6 @@ console.log(krAge);
 
 ★---★
 #  2.13 조건문(condictional)
-- parseInt(): 데이터 타입 바꾸는 함수 ex( console.log(test, parseInt(test)); = 결과값 0(스트링) 0(숫자)) > 쓰는 이유? 크기 비교하기 위해서/ 스트링은 숫자로 바꿀 수 없음(NaN로 뜸)
+- promot(): 창 띄워서 유저한테 답 얻음 > 알리어트 창의 질문버전
+- console.log(typeof 변수명); : 데이터 타입이 스트링인지 넘버인 지 알 수 있음.
+- parseInt(): 1.데이터 타입 바꾸는 함수 ex( console.log(test, parseInt(test)); = 결과값 0(스트링) 0(숫자)) > 쓰는 이유? 크기 비교하기 위해서 2. 스트링은 숫자로 바꿀 수 없음(NaN로 뜸)
